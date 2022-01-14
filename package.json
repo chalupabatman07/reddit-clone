@@ -1,0 +1,32 @@
+{
+  "name": "monorepo",
+  "version": "0.1.0",
+  "description": "my monorepo base",
+  "author": "Benito Sifuentes",
+  "license": "UNLICENSED",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "packages/*/*"
+  ],
+  "devDependencies": {
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
+    "@types/jest": "^27.0.1",
+    "@types/node": "^16.4.13",
+    "commitlint": "^13.1.0",
+    "eslint-config-react-yas": "^1.3.0",
+    "husky": "^7.0.1",
+    "lerna": "^4.0.0",
+    "stmux": "^1.8.1",
+    "typescript": "^4.3.5"
+  },
+  "scripts": {
+    "commit-msg": "commitlint",
+    "postinstall": "husky install",
+    "setup": "yarn && yarn lerna bootstrap",
+    "client:start": "npx yarn workspace @monorepo/client start",
+    "server:start": "npx yarn workspace @monorepo/server start",
+    "start": "stmux -w error -e ERROR -M -m beep,system -- [ \"npx yarn client:start\" .. \"npx yarn server:start\" ]"
+  }
+}
