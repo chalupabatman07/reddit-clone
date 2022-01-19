@@ -23,4 +23,4 @@ You may run into some linting issues depending on what type of machine you're us
 2. In the project directory use `yarn setup` to setup the project
 3. `yarn start` to start the project
 4. For web vist: http://localhost:3000/
-5. For server visit: http://localhost:8080/
+5. For server visit: http://localhost:8080/graphiql
